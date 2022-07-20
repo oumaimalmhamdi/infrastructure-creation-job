@@ -1,0 +1,22 @@
+--- 
+AWSTemplateFormatVersion: 2010-09-09
+Description: "A job that create an EC2 instance and the associated security group"
+Resources: 
+  EC2Instance:
+    Type: "AWS::EC2::Instance" 
+    Properties: 
+      ImageId: ami-052efd3df9dad4825
+      InstanceType: t2.micro
+      KeyName: udacity
+      SecurityGroups: 
+        - InstanceSecurityGroup
+  InstanceSecurityGroup:
+    Type: "AWS::EC2::SecurityGroup" 
+    Properties: 
+      GroupDescription: "Enable SSH access via port 22"
+      SecurityGroupIngress: 
+        - 
+          CidrIp: 0.0.0.0/0
+          FromPort: "22"
+          IpProtocol: tcp
+          ToPort: "22"
