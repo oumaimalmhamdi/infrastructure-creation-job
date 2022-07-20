@@ -5,9 +5,9 @@ Resources:
   EC2Instance:
     Type: "AWS::EC2::Instance" 
     Properties: 
-      ImageId: ami-052efd3df9dad4825
+      ImageId: 'ami-052efd3df9dad4825'
       InstanceType: t2.micro
-      KeyName: udacity
+      KeyName: 'udacity'
       SecurityGroups: 
         - InstanceSecurityGroup
   InstanceSecurityGroup:
